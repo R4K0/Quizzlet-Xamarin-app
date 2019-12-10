@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Quizzlet.Effects"
+             x:Class="Quizzlet.GamePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid VerticalOptions="FillAndExpand" BackgroundColor="#252C49" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.Effects>
+                        <local:GradientEffect Colors="#f12711,#f5af19" Locations="0,.85" Mode="ToBottomRight" />
+                    </Grid.Effects>
+
+                    <StackLayout Spacing="0" Padding="10,25,10,25" VerticalOptions="StartAndExpand" >
+                        <Label x:Name="CategoryLabel" Text="Category" FontAttributes="Italic" TextColor="GhostWhite" FontSize="Small" />
+                        <Label x:Name="QuestionLabel" Text="Question" FontAttributes="Bold" TextColor="GhostWhite" FontSize="Large" />
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout VerticalOptions="Center" x:Name="AnswersLayout" Grid.Row="1" />
+            </Grid>
+
+            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" Color="Black" Opacity="0.5" BindingContext="{x:Reference LoadingIndicator}" IsVisible="{Binding Path=IsRunning}"/>
+            <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

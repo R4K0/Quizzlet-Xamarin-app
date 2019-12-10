@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzlet.SplashPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid VerticalOptions="FillAndExpand" BackgroundColor="#252C49" >
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="SplashImage" Source="@drawable/splashlogo" VerticalOptions="Start" Aspect="AspectFit" Margin="10,0,10,40" />
+                    <Label Text="Tap to Play" TextColor="GhostWhite" FontSize="Large" HorizontalOptions="Center" />
+                    <Label Text="(Internet Access Required)" FontAttributes="Italic" TextColor="GhostWhite" FontSize="Micro" HorizontalOptions="Center" />
+                </StackLayout>
+
+            </Grid>
+
+            <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" Color="Black" Opacity="0.5" BindingContext="{x:Reference LoadingIndicator}" IsVisible="{Binding Path=IsRunning}"/>
+            <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

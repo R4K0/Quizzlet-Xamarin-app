@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Quizzlet"
+             xmlns:effects="clr-namespace:Quizzlet.Effects"
+             x:Class="Quizzlet.MainPage"
+             BackgroundColor="#252C49"
+             BindingContext="{x:Reference LoadingIndicator}"
+             IsEnabled="{Binding Path=!IsRunning}">
+
+
+
+
+    <Grid>
+        <Grid VerticalOptions="FillAndExpand" BackgroundColor="#252C49" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="@drawable/splashlogo" VerticalOptions="Start" Aspect="AspectFit" Margin="25,45,25,0" />
+
+            <StackLayout Grid.Row="0" VerticalOptions="Center" Padding="55,0,55,0" Spacing="0,0,0,0">
+                <Button x:Name="DifficultyButton" Clicked="Difficulty_Change" BorderRadius="50" BackgroundColor="Transparent" BorderWidth="3" BorderColor="GhostWhite" Text="Choose a Difficulty" TextColor="GhostWhite" Margin="25,0,25,3" />
+                <Button x:Name="CategoryButton" Clicked="Category_Change" BorderRadius="50" BackgroundColor="Transparent" BorderWidth="3" BorderColor="GhostWhite" Text="Choose a Category" TextColor="GhostWhite" Margin="25,0,25,3" />
+            </StackLayout>
+
+            <Button Clicked="Start_Game" Grid.Row="1" BorderRadius="50" BackgroundColor="Transparent" BorderWidth="3" BorderColor="GhostWhite" Text="Start Quiz" TextColor="GhostWhite" Margin="25,0,25,10" />
+
+        </Grid>
+
+        <BoxView HorizontalOptions="Fill" VerticalOptions="Fill" Color="Black" Opacity="0.5" BindingContext="{x:Reference LoadingIndicator}" IsVisible="{Binding Path=IsRunning}"/>
+        <ActivityIndicator x:Name="LoadingIndicator" IsRunning="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
+
+</ContentPage>
