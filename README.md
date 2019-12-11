@@ -3,6 +3,8 @@ An quizzlet app designed specifically for Android, written in Xamarin - Build no
 
 The app requires internet access as it sends API GET requests to https://opentdb.com to retrieve categories, and questions with answers.
 
+Application created for second year college Software Development project - The code probably is not optimized, expendable and mainteanable 
+
 Android 100% tested and working as designed.
 
 ## Dependencies 
