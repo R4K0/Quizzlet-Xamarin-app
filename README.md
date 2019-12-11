@@ -11,6 +11,9 @@ Android 100% tested and working as designed.
 
 ## Credits
 Newtonsoft for their JSON Library
+
 Microsoft, for Xamarin
+
 PIXELTAIL GAMES LLC for their Open Trivia Database and API
+
 User calibrae on Stack Overflow for their gradient effect: https://stackoverflow.com/a/56839013
